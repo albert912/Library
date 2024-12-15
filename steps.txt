@@ -1,0 +1,4 @@
+I am at the fifth step.
+
+I need to create a button dynamically to remove the book details on the page.(they should be deleted from the library array also).
+

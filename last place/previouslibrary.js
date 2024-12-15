@@ -89,95 +89,105 @@ addBookToLibrary()
 
 
 function display() {
-     
-      const bookDetails = document.querySelectorAll('div[data-index]');
-      bookDetails.forEach(bookDetail => bookDetail.remove());
-    
-      for (let i = 0; i < myLibrary.length; i++) {
+
+
+for (let i = 0; i < myLibrary.length; i++) {
+
+   
         let divElement = document.createElement("div");
+
         divElement.setAttribute('data-index', i);
+     
 
-        divElement.className = "book-div";
-    
         document.body.appendChild(divElement);
-    
+
+        //div code ends
+
         let pone = document.createElement("p");
+
         pone.className = "ponestyle";
+
         pone.textContent = myLibrary[i].name;
+
         divElement.appendChild(pone);
-    
+
+        //
+
+
         let ptwo = document.createElement("p");
-        ptwo.className = "ptwostyle";
-        ptwo.textContent = myLibrary[i].author;
-        divElement.appendChild(ptwo);
-    
+
+
+  ptwo.className = "ptwostyle";
+
+  ptwo.textContent = myLibrary[i].author;
+
+    divElement.appendChild(ptwo);
+
+        //
+
+      
+
         let pthree = document.createElement("p");
+
+
         pthree.className = "pthreestyle";
+
         pthree.textContent = myLibrary[i].page;
+      
         divElement.appendChild(pthree);
-    
+      
+
         let pfour = document.createElement("p");
+
+
         pfour.className = "pfourstyle";
+
         pfour.textContent = myLibrary[i].year;
-        divElement.appendChild(pfour);
-    
-        let pfive = document.createElement("p");
-        pfive.className = "pfivestyle";
-        pfive.textContent = myLibrary[i].read;
-        divElement.appendChild(pfive);
-    
-        const but = document.createElement("button");
-        but.textContent = "Remove";
-        but.setAttribute('data-index', i);
-        divElement.appendChild(but);
+      
 
-       const space = document.createElement("br");
-       space.setAttribute('data-index', i);
-        divElement.appendChild(space);
-
-        const space1 = document.createElement("br");
-       space1.setAttribute('data-index', i);
-        divElement.appendChild(space1);
+       divElement.appendChild(pfour);
 
 
+       let pfive = document.createElement("p");
 
-        const read = document.createElement("button");
-        read.textContent = "Read";
-        read.setAttribute
-        ('data-index', i);
-        divElement.appendChild(read);
-    
-        but.addEventListener("click", (event) => {
-          const index = event.target.dataset.index;
-          myLibrary.splice(index, 1);
-          display();
-        });
 
-        read.addEventListener("click", (event) => {
-            let index = event.target.dataset.index;
-        
-            console.log(index);
-        
-            if (myLibrary[index].read === "Yes") {
-                myLibrary[index].read = "No";
-               
-            } else {
-                myLibrary[index].read = "Yes";
-               
-            }
-        
-            display();  
-        });
-        
-        
-        
-        
-      }
-    }
-    
-    display();
-    
+       pfive.className = "pfivestyle";
 
+       pfive.textContent = myLibrary[i].read;
+     
+
+      divElement.appendChild(pfive);
+
+      const but = document.createElement("button");
+
+      but.textContent = "Remove";
+
+      but.setAttribute('data-index', i);
+     
+
+      divElement.appendChild(but);
+
+      but.addEventListener("click", (event) => {
+            const index = event.target.dataset.index; 
+            
+            
+            myLibrary.splice(index, 1); 
+          
+           
+            const bookDetails = document.querySelectorAll('div[data-index]');
+            bookDetails.forEach(bookDetail => bookDetail.remove());
+          
+           
+            display(); 
+          });
+          
+       
+ }
+
+
+}
+
+display()
 
 const btn = document.querySelector(".mybutton");
 
@@ -358,25 +368,155 @@ btn.addEventListener("click", () => {
 
 dialg.appendChild(form);
 
+
 submit.addEventListener("click", (event) => {
+
       event.preventDefault();
+
+
+      const  finputv = document.querySelector(".firstinput").value
+
+      const   sinputv = document.querySelector(".secondinput").value;
+         
+      const  tinputv = document.querySelector(".thirdinput").value;
+         
+      const  foinputv = document.querySelector(".fourthinput").value;
+         
+      const  fiinputv = document.querySelector(".fifthinput").value;
+
+function addToLibrary() {
+
     
-      const finputv = document.querySelector(".firstinput").value;
-      const sinputv = document.querySelector(".secondinput").value;
-      const tinputv = document.querySelector(".thirdinput").value;
-      const foinputv = document.querySelector(".fourthinput").value;
-      const fiinputv = document.querySelector(".fifthinput").value;
+      
+      const newbook = new Book (finputv, sinputv, tinputv, foinputv, fiinputv);
+      
+      console.log(newbook.name); 
+      
+      console.log(newbook.author);
+      
+      console.log(newbook.page);
+      
+      console.log(newbook.year);
+      
+      console.log(newbook.read);
+      
+     myLibrary.push(newbook);
+
+
+}
+
+function display() {
+      
+for (let i = 4; i < myLibrary.length; i++) {
+
+      let divElement = document.createElement("div");
+
+      divElement.setAttribute('data-index', i);
+   
+
+      document.body.appendChild(divElement);
+
+
+      let pone = document.createElement("p");
+
+      pone.className = "ponestyle";
+
+      pone.textContent = myLibrary[i].name;
     
-      const newbook = new Book(finputv, sinputv, tinputv, foinputv, fiinputv);
-      myLibrary.push(newbook);
+      divElement.appendChild(pone);
+
+      //
+
+     
+
+      let ptwo = document.createElement("p");
+
+
+ptwo.className = "ptwostyle";
+
+ptwo.textContent = myLibrary[i].author;
+
+divElement.appendChild(ptwo);
+
+      //
+
+
+      let pthree = document.createElement("p");
+
+
+      pthree.className = "pthreestyle";
+
+      pthree.textContent = myLibrary[i].page;
     
-      dialg.close();
-      display();
-      dialg.textContent = "";
-    });
-    
+
+      divElement.appendChild(pthree);
 
 
 
+      let pfour = document.createElement("p");
+
+
+      pfour.className = "pfourstyle";
+
+      pfour.textContent = myLibrary[i].year;
+    
+
+     divElement.appendChild(pfour);
+
+
+     let pfive = document.createElement("p");
+
+
+     pfive.className = "pfivestyle";
+
+     pfive.textContent = myLibrary[i].read;
+   
+
+
+
+     divElement.appendChild(pfive);
+
+      const but = document.createElement("button");
+
+      but.textContent = "Remove";
+
+      but.setAttribute('data-index', i);
+     
+
+      divElement.appendChild(but);
+
+      but.addEventListener("click", (event) => {
+            const index = event.target.dataset.index; 
+            
+            
+            myLibrary.splice(index, 1); 
+          
+           
+            const bookDetails = document.querySelectorAll('div[data-index]');
+            bookDetails.forEach(bookDetail => bookDetail.remove());
+          
+           
+            display(); 
+          });
+          
+}
+
+}
+
+dialg.close();
+
+addToLibrary()
+
+display()
+
+dialg.textContent = "";
+
+
+
+});
+
+
+
+//end
 
 });

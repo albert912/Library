@@ -1,0 +1,19 @@
+myLibrary[0].book1 to select string not the object.
+
+Ganesh
+What if when you clicked remove button you removed the existing books and then rerendered library with display
+albert — Today at 4:37 PM
+Do you mean that even if I click just one remove button all the existing books should be removed?
+
+By removed do you mean that they should be deleted from the page or from the library array?
+Ganesh — Today at 4:38 PM
+From the page. The only book that should be removed from both page and the library is the one whose remove button is clicked 
+albert — Today at 4:39 PM
+So, should all books be removed from the page if I click just one remove button?
+Ganesh — Today at 4:39 PM
+Well think about it and see if it fixes the index problem
+Sorry I gotta run for today
+albert — Today at 4:40 PM
+Okay, thanks a lot for your help, soo it looks like I will have a dinner and see whether I can fix this issue based on your advice. 
+
+Thanks a lot.
