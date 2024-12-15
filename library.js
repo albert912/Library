@@ -375,5 +375,4 @@ submit.addEventListener("click", (event) => {
       dialg.textContent = "";
     });
     
-
 });
