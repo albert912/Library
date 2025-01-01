@@ -3,13 +3,16 @@ const myLibrary = [];
 
 
 
-function Book (name, author, page,year, read) {
+class Book  {
+
+  constructor (name, author, page,year, read) {
 
 this.name = name;
 this.author = author;
 this.page = page;
 this.year = year;
 this.read = read;
+}
 }
 
 function addBookToLibrary() {
@@ -368,6 +371,7 @@ submit.addEventListener("click", (event) => {
       const fiinputv = document.querySelector(".fifthinput").value;
     
       const newbook = new Book(finputv, sinputv, tinputv, foinputv, fiinputv);
+
       myLibrary.push(newbook);
     
       dialg.close();
